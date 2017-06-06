@@ -1,0 +1,17 @@
+<h1><%= "#{@doctor.name} Department: #{@doctor.department}"%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date and Time</th><th>Patient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @doctor.appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.appointment_datetime.stamp("January 11, 2016 at 20:20") %></td>
+        <td><%= link_to appointment.patient.name, appointment.patient %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

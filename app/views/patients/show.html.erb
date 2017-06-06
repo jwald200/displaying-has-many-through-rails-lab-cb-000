@@ -1,0 +1,20 @@
+<h1><%= @patient.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Appoinment time</th>
+      <th>Doctor</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <% @patient.appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.appointment_datetime.stamp("January 11, 2016 at 20:20")%></td>
+        <td><%= link_to appointment.doctor.name, appointment.doctor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
